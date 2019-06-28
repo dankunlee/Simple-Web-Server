@@ -33,7 +33,7 @@ class SimpleWebServer():
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # create TCP welcoming socket
         try:
             #Bind to a port
-            self.server.bind(('', self.port))
+            self.server.bind(('0.0.0.0', self.port)) #'0.0.0.0' allows open network to be connected
         except socket.error:
             print('Bind failed %s' % (socket.error))
             sys.exit()
